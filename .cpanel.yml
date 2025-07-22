@@ -1,0 +1,8 @@
+---
+deployment:
+  tasks:
+    - export DEPLOY_PATH=/home/quickman/public_html/admin.quickman.lk
+    - echo "Deploying to $DEPLOY_PATH"
+    - /bin/cp -R * "$DEPLOY_PATH"
+    - /bin/cp -R .htaccess "$DEPLOY_PATH" || true
+    - find "$DEPLOY_PATH" -type f -name ".cpanel.yml" -delete
